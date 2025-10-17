@@ -4,10 +4,13 @@ const Agence = () => {
   return (
     <div className="font-[font2]">
       <div className="mt-[55vh]">
-        <h2>GENERATES CREATIVITY</h2>
+        <div>
+          <h2 className="text-[19vw] text-center uppercase leading-[17vw]" >midnight<br/><h2 className="pl-39" >sparks</h2></h2>
+        </div>
+        
       </div>
-      <div className="pl-1/2">
-        <p className="text-6-xl w-1/2" >
+      <div className="pl-[40%]">
+        <p className="text-4xl w-2/3" >
           {" "}
           Unleash the fizz, feel the buzz! Dive into the world where crisp
           refreshment meets unstoppable energy. Our soft drink awakens your
