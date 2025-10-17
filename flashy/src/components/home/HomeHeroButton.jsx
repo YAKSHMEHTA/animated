@@ -19,7 +19,9 @@ const HomeHeroButton = () => {
       <div className="text-[8vw] uppercase leading-[6vw]  flex justify-center items-center">
         Generates
       </div>
-      
+      <div className="text-[8vw] uppercase leading-[7.5vw] flex justify-center items-center">
+        thecreativity
+      </div>
     </div>
   );
 };
