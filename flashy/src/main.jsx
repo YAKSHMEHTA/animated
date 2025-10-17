@@ -9,8 +9,7 @@ import Home from './pages/Home.jsx'
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter> 
-      <Home/>
-      <Video/>
+      <App></App>
     </BrowserRouter>
   </StrictMode>,
 )

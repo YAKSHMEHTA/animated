@@ -20,7 +20,7 @@ const HomeHeroButton = () => {
         Generates
       </div>
       <div className="text-[8vw] uppercase leading-[7.5vw] flex justify-center items-center">
-        thecreativity
+        the creativity
       </div>
     </div>
   );

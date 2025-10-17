@@ -3,7 +3,7 @@ import Video from '../components/home/Video'
 import HomeBottomText from '../components/home/HomeBottomText'
 import HomeHeroButton from '../components/home/HomeHeroButton'
 
-const home = () => {
+const Home = () => {
   return (
     <div>
       <div className='h-screen w-screen fixed' >
@@ -17,4 +17,4 @@ const home = () => {
   )
 }
 
-export default home
+export default Home
