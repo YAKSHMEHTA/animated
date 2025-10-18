@@ -3,12 +3,12 @@ import Home from './pages/Home'  // Ensure your file is named Home.jsx (capital 
 import Agence from './pages/Agence'
 import Projects from './pages/Projects'
 import { Link ,Routes, Route } from 'react-router-dom'
+import Stairs from './components/common/Stairs'
 
 const App = () => {
   return (
-    <div className='text-white'>
-      
-      
+    
+    <div className='text-white relative'>
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/agence' element={<Agence />} />
