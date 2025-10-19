@@ -35,8 +35,8 @@ const Agence = () => {
         pinSpacing: true,
         pinReparent: true,
         pinType: 'transform',
-        scrub: 1,
-        anticipatePin: 1,
+        scrub: 0.3,
+        anticipatePin: 0.1,
         invalidateOnRefresh: true,
         onUpdate: (elem) => {
           let imageIndex;
@@ -65,7 +65,7 @@ const Agence = () => {
             alt=""
           />
         </div>
-        <div className="relative font-[font2]">
+        <div className="relative font-[font2] ">
           <div className="lg:mt-[55vh] mt-[30vh]">
             <h1 className="text-[20vw] text-center uppercase leading-[18vw]">
               midnight <br />
