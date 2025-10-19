@@ -28,10 +28,16 @@ const Agence = () => {
     gsap.to(imgDivRef.current, {
       scrollTrigger: {
         trigger: imgDivRef.current,
-        start: "top 26%",
-        end: "top -170%",
-        scrub: true,
+        start: "top 1%",
+        end: "top -190%",
+        markers:true,
         pin: true,
+        pinSpacing: true,
+        pinReparent: true,
+        pinType: 'transform',
+        scrub: 1,
+        anticipatePin: 1,
+        invalidateOnRefresh: true,
         onUpdate: (elem) => {
           let imageIndex;
           if (elem.progress < 1) {
@@ -46,17 +52,16 @@ const Agence = () => {
   });
 
   return (
-    <div className="parent">
-      <div id="page1" className="py-1 ">
+    <div className="parent text-black ">
+      <div id="page1" className="py-1 min-h-screen relative">
         <div
           ref={imgDivRef}
-          className=
-"absolute overflow-hidden lg:h-[20vw] h-[30vw] lg:rounded-3xl rounded-xl lg:w-[15vw] w-[25vw] lg:top-[-48] -top[-45] lg:left-[30vw] left-[30vw]"
+          className="absolute overflow-hidden lg:h-[20vw] h-[30vw] lg:rounded-3xl rounded-xl lg:w-[15vw] w-[25vw] top-0 left-[30vw] bg-gray-900"
         >
           <img
             ref={imgRef}
             className="h-full object-cover w-full"
-            src="https://i.pinimg.com/1200x/d4/4a/75/d44a755453ff82c65cc47a320f9fdf18.jpg"
+            src={imgarr[0]}
             alt=""
           />
         </div>
@@ -67,19 +72,17 @@ const Agence = () => {
               sparks
             </h1>
           </div>
-          <div className="lg:pl-[40%] lg:mt-20 mt-4 p-3">
-            <p className="lg:text-6xl text-xl leading-tight">
-              {" "}
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Unleash the
-              fizz, feel the buzz! Dive into the world where crisp refreshment
-              meets unstoppable energy. Our soft drink awakens your taste buds
-              with every sip, while our energy drink ignites your inner spark,
-              powering you through the day with a burst of vitality{" "}
+          <div className="lg:pl-[40%] lg:mt-20 mt-4 p-3 text-black ">
+            <p className="lg:text-6xl text-xl leading-tight text-black ">
+              Unleash the fizz, feel the buzz! Dive into the world where crisp
+              refreshment meets unstoppable energy. Our soft drink awakens your
+              taste buds with every sip, while our energy drink ignites your inner spark,
+              powering you through the day with a burst of vitality
             </p>
           </div>
         </div>
       </div>
-      <div id="page2" className=" h-screen"></div>
+      <div id="page2" className="h-screen w-full "></div>
     </div>
   );
 };

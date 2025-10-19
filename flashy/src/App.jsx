@@ -1,14 +1,14 @@
-import React from 'react'
-import Home from './pages/Home'  // Ensure your file is named Home.jsx (capital H)
+import React, { useEffect, useState } from 'react'
+import Home from './pages/Home'
 import Agence from './pages/Agence'
 import Projects from './pages/Projects'
-import { Link ,Routes, Route } from 'react-router-dom'
-import Stairs from './components/common/Stairs'
+import { Routes, Route } from 'react-router-dom'
 
 const App = () => {
+ 
+
   return (
-    
-    <div className='text-white relative'>
+    <div className='text-white yak relative'>
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/agence' element={<Agence />} />

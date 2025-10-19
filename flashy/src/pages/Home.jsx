@@ -6,10 +6,10 @@ import HomeHeroButton from '../components/home/HomeHeroButton'
 const Home = () => {
   return (
     <div>
-      <div className='h-screen w-screen fixed' >
+      <div className='h-full w-screen fixed' >
         <Video/>
       </div  >
-      <div className='h-[120vh] w-screen relative flex flex-col justify-between' >
+      <div className='h-[130vh] w-screen  relative flex flex-col justify-between' >
         <HomeHeroButton/>
         <HomeBottomText/>
       </div>

@@ -7,9 +7,10 @@ import Stairs from './components/common/Stairs.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <BrowserRouter> 
-      <Stairs />
-      <App></App>
+    <BrowserRouter>
+      <Stairs>
+        <App />
+      </Stairs>
     </BrowserRouter>
   </StrictMode>,
 )
