@@ -1,13 +1,47 @@
-import React from 'react'
+import { useGSAP } from '@gsap/react'
+import gsap from 'gsap'
+import { useRef } from 'react'
 
 const Fullscreennav = () => {
+
+    const stairParentRef = useRef(null)
+    const fullScreenNav = useRef(null);
+
+    useGSAP(function () {
+        const tl = gsap.timeline()
+        
+        tl.from('.stair', {
+            delat:3,
+            height: 0,
+            stagger: {
+                amount: -0.2
+            }
+        })
+        tl.from(fullScreenNav.current,{
+            opacity:0,
+        })
+    },)
+
   return (
     <div className='h-screen overflow-hidden bg-black'>
-      <div className="flex w-full p-3 justify-between items-start">
+            <div ref={stairParentRef} className='h-screen w-full fixed '>
+                <div className='h-full w-full flex'>
+                    <div className='stairing h-full w-1/5 bg-black'></div>
+                    <div className='stairing h-full w-1/5 bg-white'></div>
+                    <div className='stairing h-full w-1/5 bg-black'></div>
+                    <div className='stairing h-full w-1/5 bg-white'></div>
+                    <div className='stairing h-full w-1/5 bg-black'></div>
+                </div>
+            </div>
+      <div ref={fullScreenNav} className='relative'>
+        <div className="flex w-full p-3 justify-between items-start">
         <div>
           <h1>YAKSH</h1>
         </div>
-        <div className='bg-cyan-700 h-18 w-18' >{/* decreased from h-20 w-20 to h-18 w-18 */}</div>
+        <div className=' h-18 w-18 relative cursor-pointer ' >{/* decreased from h-20 w-20 to h-18 w-18 */}
+            <div className='absolute h-25 bg-red-600 w-1 -rotate-45 origin-top' ></div>
+            <div className='absolute h-25 bg-red-600 w-1 right-0 rotate-45 origin-top' ></div>
+        </div>
       </div>
       <div className="py-7">
         <div className='link h-32 origin-top relative border-1 border-white'>{/* decreased from h-36 to h-32 */}
@@ -80,6 +114,7 @@ const Fullscreennav = () => {
         </div>
       </div>
     </div>
+      </div>
   )
 }
 
