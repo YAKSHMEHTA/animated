@@ -1,44 +1,93 @@
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
-import { useRef } from 'react'
+import React, { useContext, useEffect, useRef, useState } from 'react'
+import { NavbarContext } from '../../context/NavContext';
 
 const Fullscreennav = () => {
 
-    const stairParentRef = useRef(null)
+    const stairParentRef = useRef(null);
     const fullScreenNav = useRef(null);
+    const fullScreenRef = useRef(null);
+    const [navOpen, setNavOpen] = useContext(NavbarContext);
 
-    useGSAP(function () {
+     function gsapAnimation() {
         const tl = gsap.timeline()
-        
-        tl.from('.stair', {
-            delat:3,
-            height: 0,
+        tl.to('#fullscreennav', {
+            display: 'block'
+        })
+        tl.to('.stairing', {
+            delay: 0.2,
+            height: '100%',
             stagger: {
-                amount: -0.2
+                amount: -0.3,
             }
         })
-        tl.from(fullScreenNav.current,{
-            opacity:0,
+        tl.to('.link', {
+            opacity: 1,
+            rotateX: 0,
+            stagger: {
+                amount: 0.3
+            }
         })
-    },)
+        tl.to('.navlink', {
+            opacity: 1
+        })
+    }
+    function gsapAnimationReverse() {
+        const tl = gsap.timeline()
+        tl.to('.link', {
+            opacity: 0,
+            rotateX: 90,
+            stagger: {
+                amount: 0.1
+            }
+        })
+        tl.to('.stairing', {
+            height: 0,
+            stagger: {
+                amount: 0.1
+            },
+        })
+        tl.to('.navlink', {
+            opacity: 0
+        })
+        tl.to('#fullscreennav', {
+            display: 'none',
+        })
+    }
+
+
+    useGSAP(function () {
+        if (navOpen) {
+            
+            gsapAnimation()
+        } else {
+
+            gsapAnimationReverse()
+
+        }
+    }, [navOpen])
+
 
   return (
-    <div className='h-screen overflow-hidden bg-black'>
+    <div ref={fullScreenRef} id='fullscreennav' className='h-screen hidden z-60  w-full text-white overflow-hidden absolute '>
             <div ref={stairParentRef} className='h-screen w-full fixed '>
                 <div className='h-full w-full flex'>
                     <div className='stairing h-full w-1/5 bg-black'></div>
-                    <div className='stairing h-full w-1/5 bg-white'></div>
                     <div className='stairing h-full w-1/5 bg-black'></div>
-                    <div className='stairing h-full w-1/5 bg-white'></div>
+                    <div className='stairing h-full w-1/5 bg-black'></div>
+                    <div className='stairing h-full w-1/5 bg-black'></div>
                     <div className='stairing h-full w-1/5 bg-black'></div>
                 </div>
             </div>
-      <div ref={fullScreenNav} className='relative'>
-        <div className="flex w-full p-3 justify-between items-start">
+      <div ref={fullScreenNav} className='relative '>
+        <div className="flex w-full p-3 justify-between items-start navlink">
         <div>
           <h1>YAKSH</h1>
         </div>
-        <div className=' h-18 w-18 relative cursor-pointer ' >{/* decreased from h-20 w-20 to h-18 w-18 */}
+        <div onClick={()=>{setNavOpen(false);
+          gsapAnimationReverse();
+        }}  className=' h-18 w-18 relative cursor-pointer ' >{/* decreased from h-20 w-20 to h-18 w-18 */}
             <div className='absolute h-25 bg-red-600 w-1 -rotate-45 origin-top' ></div>
             <div className='absolute h-25 bg-red-600 w-1 right-0 rotate-45 origin-top' ></div>
         </div>
