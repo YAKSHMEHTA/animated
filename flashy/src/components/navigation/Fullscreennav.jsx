@@ -85,11 +85,9 @@ const Fullscreennav = () => {
         <div>
           <h1>YAKSH</h1>
         </div>
-        <div onClick={()=>{setNavOpen(false);
-          gsapAnimationReverse();
-        }}  className=' h-18 w-18 relative cursor-pointer ' >{/* decreased from h-20 w-20 to h-18 w-18 */}
-            <div className='absolute h-25 bg-red-600 w-1 -rotate-45 origin-top' ></div>
-            <div className='absolute h-25 bg-red-600 w-1 right-0 rotate-45 origin-top' ></div>
+        <div onClick={()=>{setNavOpen(false);}}  className=' h-18 w-18 relative cursor-pointer ' >{/* decreased from h-20 w-20 to h-18 w-18 */}
+            <div className='absolute h-25 bg-white w-1 -rotate-45 origin-top' ></div>
+            <div className='absolute h-25 bg-white w-1 right-0 rotate-45 origin-top' ></div>
         </div>
       </div>
       <div className="py-7">
