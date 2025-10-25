@@ -9,7 +9,7 @@ const App = () => {
 
 
   return (
-    <div className='text-white yak relative'>
+    <div className='text-white yak relative h-screen overflow-x-hidden'>
       <Fullscreennav />
       <Navbar />
       <Routes>
