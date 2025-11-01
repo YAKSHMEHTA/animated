@@ -10,7 +10,7 @@ const Agence = () => {
   const imgRef = useRef(null);
   const imgarr = [
     "https://i.pinimg.com/1200x/d4/4a/75/d44a755453ff82c65cc47a320f9fdf18.jpg",
-    "https://i.pinimg.com/1200x/d4/4a/75/d44a755453ff82c65cc47a320f9fdf18.jpg",
+    "https://i.pinimg.com/1200x/d4/4a/75/d44a755453ff82c65cc47a320f9fdf18.jpg",  
     "https://i.pinimg.com/474x/88/38/4f/88384f3c7267ec1c0ac3755e485d2cb3.jpg",
     "https://i.pinimg.com/736x/07/81/77/0781770279c78e2290aa622d01fa9541.jpg",
     "https://i.pinimg.com/736x/2a/85/13/2a8513396e5c47e57c4a7eaafb923570.jpg",
